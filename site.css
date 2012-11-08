@@ -1,0 +1,44 @@
+﻿body{ 
+background-color: #4C87C4;
+}
+.MainWrapper
+{
+	width: 90%;
+	height:90%;
+	margin:10% 10% 10% 10%;
+	border:thick black;
+	z-index: auto;
+	}
+
+.header
+{
+width:100%;
+height:20%;
+text-align:center;
+font-size:large;
+font-weight:bold;
+}
+.refe
+{
+	text-align:right;
+}
+
+.maincontent{
+width:100%;
+height:50%;
+margin-left: 40%;
+}
+
+#label
+{
+	text-align:justify;
+}
+
+.footer
+{
+	width:100%;
+	height:20%;
+	text-align:center;
+	font-size: medium;
+	font-weight:bold;
+}

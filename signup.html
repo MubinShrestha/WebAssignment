@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link href="site.css" type="text/css" rel="stylesheet"/>
+		<script type = "text/javascript">
+		 function checkValid(field)
+		 {   
+			var user = /^\d\w{6,}$/;
+			var passwd = /^[0-9a-zA-Z]\w{5,}$/;
+			var emailt = /^[A-Za-z][\w.-]+@\w[\w.-]+\.[\w.-]*[A-Za-z][A-Za-z]$/ ;
+				if(field.value == document.getElementById("username").value)
+				{
+					if(user.test(field.value))
+					{
+						document.getElementById("nameLabel").innerHTML = " "; 
+					}
+					else
+					{
+						document.getElementById("nameLabel").innerHTML = "Username must begin with a 						digit and should consist atleast 6 letters";
+					}
+				}
+				
+				if(field.value == document.getElementById("password").value)
+				{
+					if(passwd.test(field.value))
+					{
+						document.getElementById("pLabel").innerHTML = " "; 
+					}
+					else
+					{
+						document.getElementById("pLabel").innerHTML = "No symbols in Password and should consist 							atleast 6 letters";
+					}
+				}
+
+				if(field.value == document.getElementById("email").value)
+				{
+					if(emailt.test(field.value))
+					{
+						document.getElementById("eLabel").innerHTML = " "; 
+					} 
+					else
+					{
+						document.getElementById("eLabel").innerHTML = "Invalid Email!!!";
+					}
+				}
+
+				if(field.value == document.getElementById("c_password").value)
+				{
+				if(document.getElementById("password").value === field.value ){
+					if(emailt.test(field.value) )
+					{
+						document.getElementById("cpLabel").innerHTML = " "; 
+					}
+					else
+					{
+						document.getElementById("cpLabel").innerHTML = "No symbols in Password and should consist 							atleast 6 letters";
+					}
+				}else{document.getElementById("cpLabel").innerHTML = "Password mismatch ";  }
+				}
+
+			field.focus();
+		 }
+		</script>
+	</head>
+	
+	<body>
+		<div class="MainWrapper" style="width: 71%; height: 403px">
+				<div class="header"><label>Sign Up Demo Page</label>
+				  <div class="refe">
+				    <a href="homepage.html">HomePage</a><br/>
+				    <a href="signup.html">Sign Up In</a><br/>
+             			    <a href="login.html">Log In</a><br/>				   
+				    <a href="profile.html">Profile Information </a><br/>	
+	   			  </div> 
+				 </div>
+				<br/><br/>
+				<div class="mainContent">
+					<form action="" method="post" >
+                        		 <div id="label">
+					  <label>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; : </label>
+					  <input type="text" id="username" onChange="checkValid(this)"/><label id = "nameLabel">Required</label></div>
+					  <br/><br/>
+					 <div id="label">
+				 	  <label >Email  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 &nbsp;&nbsp;&nbsp;&nbsp;: </label>
+					  <input type="text" id="email" onChange = "checkValid(this)"/>
+					  <label id = "eLabel">Required</label>
+					</div>
+					<br/><br/>
+					<div id="label">
+						<label>Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; : </label>
+						<input type="password" id="password" onChange = "checkValid(this)"/>
+						<label id = "pLabel">Required</label>
+					</div>
+					<br/><br/>
+				 	<div id="label">
+						<label>Confirm_Password &nbsp;&nbsp;: </label>
+						<input type="password" id="c_password" onChange = "checkValid(this)"/>
+						<label id = "cpLabel">Required</label>
+					</div><br/><br/>
+				 		<div id="label"> <input type="submit" value="Sign Up"></div>
+					</form>
+				</div>
+				<br/><br/>
+				<div class="footer">
+				<label>Copyright &copy; 2012 by Mubin Shrestha </label>		
+				</div>
+		
+		</div>
+	</body>
+</html>
